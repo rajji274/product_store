@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './beauty.css'
 import { UseCart } from './CartProvider'
-import { useSearchParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function Womens() {
     const [products,setProducts]=useState([]);
@@ -67,6 +67,7 @@ function Womens() {
                                  <span className="rating">Rating   {product.rating}</span>
                                  <p className="price">$  {product.price}</p>
                                  <button className="add-to-cart" onClick={()=>addToCart(product)}>Add To Cart</button>
+                             <Link className='product-link' to={`/product/${product.id}`}>View Details</Link>
                             </div>
                         ))
                     }

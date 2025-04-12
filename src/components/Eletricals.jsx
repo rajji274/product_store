@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './beauty.css'
 import { UseCart } from './CartProvider';
+import { Link } from 'react-router-dom';
 
 
 function Eletricals() {
@@ -39,42 +40,46 @@ function Eletricals() {
     });
   return (
     <div>
-            <div className="input-card">
-                <input
-                    type="search"
-                    placeholder="Search products..."
-                    value={userInput}
-                    onChange={(e) => setUserInput(e.target.value)}
-                    style={{ width: "600px", height: "60px" }}
-                />
-            </div>
-            {
-                loading ? (
-                    <div className="loading-page">
-                        <h2 className='page-load'>Loading...</h2>
-                    </div>
-                ) : filteredProducts.length > 0 ? (
-                    <div className="beauty-wrapper">
-                       { filteredProducts.map(product => (
-                        <div className="container-beauty" key={product.id}>
-                           <img src={product.thumbnail} alt={product.title} />
-                            <p className="title">{product.title}</p>
-                            {/* <p className="description">{product.description}</p> */}
-                            <span className="rating">Rating {product.rating}</span>
-                            <p className="price">${product.price} </p>
-                            <button className="add-to-cart" onClick={()=>addToCart(product)}>Add to cart</button>
-                            
-                        </div>
-                    ))}
-                    </div>
-                ) : (
-                    <div className="no-product">
-                        <h3 className="no-data">No Products Found</h3>
-                    </div>
-                )
-            }
+        <div className="input-card">
+            <input type="search" 
+            placeholder='Search Product Here..'
+            value={userInput} 
+            onChange={(e)=>setUserInput(e.target.value)}
+            style={{width:"600px",height:"60px"}}
+            />
         </div>
-    );
+        {
+            loading ? (
+                <div className="loading-page">
+                    <h2 className="page-load">Loading...</h2>
+                </div>
+            ):filteredProducts.length > 0 ? (
+                <div className="beauty-wrapper">
+                    {
+                        filteredProducts.map(product =>(
+                            <div className="container-beauty" key={product.id}>
+                                <img src={product.thumbnail} alt={product.title} />
+                                <p className="title">{product.title}</p>
+                                <span className="rating">Ratings  {product.rating}</span>
+                                <p className="price">$ {product.price}</p>
+                                <button className="add-to-cart" onClick={()=>addToCart(product)}>Add To Cart</button>
+                            </div>
+
+
+                        ))
+                    }
+                </div>
+            ):(
+                <div className="no-product">
+                    <h3 className="no-data">No Products Found</h3>
+                </div>
+            )
+        }
+
+
+
+    </div>
+  )
 }
 
 export default Eletricals

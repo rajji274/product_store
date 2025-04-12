@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './beauty.css'
+import {Link} from 'react-router-dom'
 import { UseCart } from './CartProvider';
 function Mens() {
     const [products, setProducts] = useState([]);
@@ -62,8 +63,8 @@ function Mens() {
                             {/* <p className="description">{product.description}</p> */}
                             <span className="rating">Rating {product.rating}</span>
                             <p className="price">${product.price} </p>
-                            <button className="add-to-cart" onClick={()=>addToCart(product)}>Add to cart</button>
-                            
+                            <button className="add-to-cart" onClick={()=>addToCart(product)}>Add To Cart</button>
+                            <Link className='product-link' to={`/product/${product.id}`}>View Details</Link>
                         </div>
                     ))}
                     </div>

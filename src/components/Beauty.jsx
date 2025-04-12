@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import './beauty.css';
 import { UseCart } from './CartProvider';
+import { Link } from 'react-router-dom';
 
 function Beauty() {
     const [products, setProducts] = useState([]);
@@ -63,6 +64,7 @@ function Beauty() {
                             <span className="rating">Rating {product.rating}</span>
                             <p className="price">${product.price}</p>
                             <button className="add-to-cart" onClick={()=>addToCart(product)}>Add to cart</button>
+                        <Link className='product-link' to={`/product/${product.id}`}>View Details</Link>
                         </div>
                     ))}
                 </div>

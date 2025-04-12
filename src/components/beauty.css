@@ -1,61 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-}
-.input-card{
-    padding: 1vh 2vw;
-
-}
-.loading-page .page-load{
-  text-align: center;
-  font-size: 40px;
-  font-family: 'Times New Roman', Times, serif;
-  color: red;
-  padding-top: 5vh;
-}
-
-/* .container-beauty{
-    width: 350px;
-    height: fit-content;
-    display: flex;
-     grid-template-columns: repeat(auto-fill,minmax(350px,1fr)); 
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    border: 1px solid black;
-    border-radius: 15px;
-    text-align: center;
-    background-color: rgb(192, 247, 72);
-
-} */
-.container-beauty .title{
-    font-size: 25px;
-    color: blueviolet;
-    padding: 1vh 1.2vw;
-
-}
-.container-beauty img{
-    
-    padding: 1vh 1.5vw;
-    height: 150px;
-    width: 250px;
-}
-
-.container-beauty .add-to-cart{
-    margin: 1.5vh 1vw;
-    padding: 1vh 1.5vw;
-    color: black;
-    background-color: red;
-    cursor: pointer;
-    font-size: 20px;
-}
-.container-beauty .price, .rating{
-    font-size: 20px;
-    padding: 1vh 0.8vw;
-}
-
 
 * {
     margin: 0;
@@ -71,21 +13,21 @@
 .input-card input {
     width: 600px;
     height: 60px;
-    font-size: 18px;
+    font-size: 25px;
     padding: 0 1rem;
     border-radius: 10px;
     border: 1px solid #ccc;
 }
 
-.loading-page .page-load {
+ .page-load {
     text-align: center;
     font-size: 40px;
     font-family: 'Times New Roman', Times, serif;
     color: red;
-    padding-top: 5vh;
+    padding-top: 5rem;
 }
 
-/* ✅ Grid layout for products */
+/* Grid layout for products */
 .beauty-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -95,7 +37,7 @@
     
 }
 
-/* ✅ Individual product card */
+/*  Individual product card */
 .container-beauty {
   
     background-color: rgb(192, 247, 72);
@@ -108,10 +50,11 @@
 
 .container-beauty:hover {
     transform: scale(1.03);
+    cursor: pointer;
 }
 
 .container-beauty img {
-    height: 150px;
+    height: 180px;
     width: 100%;
     object-fit: cover;
     border-radius: 10px;
@@ -127,11 +70,11 @@
 .container-beauty .rating,
 .container-beauty .price {
     font-size: 18px;
-    margin: 0.25rem 0;
+    margin: 0.25rem 0.15rem;
 }
 
 .container-beauty .add-to-cart {
-    margin-top: 1rem;
+    margin: 1rem;
     padding: 0.8rem 1.2rem;
     font-size: 16px;
     background-color: red;
@@ -146,12 +89,55 @@
     background-color: darkred;
 }
 
-/* Optional: Style for empty state */
+.product-link{
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background-color: red;
+    padding: 0.6rem;
+    color: white;
+}
 .no-product {
     text-align: center;
     padding: 2rem;
+ 
 }
 .no-data {
+    margin: 5rem;
+    text-align: center;
+    color: red;
     font-size: 24px;
-    color: gray;
+    
+}
+.product-details{
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+    gap: 30px;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem;
+    
+
+}
+.product-details .product-images {
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.product-details .product-data .title{
+    text-align: center;
+    font-size: 30px;
+    color: #f4a9a9;
+}
+.product-details .product-images .product-img img{
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+    margin: 1rem;
+}
+.product-details .product-data{
+    line-height: 2rem;
 }
