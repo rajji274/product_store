@@ -9,6 +9,7 @@ import CartPage from './components/CartPage'
 import Womens from './components/Womens'
 import Eletricals from './components/Eletricals'
 import ProductDetail from './components/ProductDetails'
+import Login from './components/Login'
 
 
 function App() {
@@ -26,6 +27,8 @@ function App() {
       <Route path='cart' element={<CartPage/>}/>
       <Route path='womens' element={<Womens/>}/>
       <Route path='eletricals' element={<Eletricals/>}/>
+      <Route path='login' element={<Login/>}/>
+
      
      </Routes>
     </CartProvider>
