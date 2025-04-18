@@ -40,12 +40,12 @@ function Womens() {
     const filteredProducts=products.filter(product => {
         if(userInput==="")
             return true;
-        return product.title.toLowerCase().include(userInput.toLowerCase());
+        return product.title.toLowerCase().includes(userInput.toLowerCase());
     
     })
   return (
     <div>
-       <div className="input-cart">
+       <div className="input-card">
         <input type="search"
         placeholder='Search Products Here...'
         value={userInput} 
